@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const hebcal = require('hebcal');
 
 module.exports = function(eleventyConfig) {
   // Copy 'img' and 'css' to '_site'
@@ -9,6 +10,20 @@ module.exports = function(eleventyConfig) {
   // Date formatting filter
   eleventyConfig.addFilter("dateToRfc3339", function(date) {
     return DateTime.fromJSDate(date, { zone: "utc" }).toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+  });
+
+  // Hebrew date formatting filter
+  eleventyConfig.addFilter("hebrewDate", function(date) {
+    if (typeof date === "string") {
+      const jsDate = new Date(date);
+      const hDate = new hebcal.HDate(jsDate);
+      return hDate.greg().toLocaleString('he-IL', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    }
+    return date;
   });
 
   // Truncate filter
