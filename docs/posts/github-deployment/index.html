@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up GitHub Pages Deployment</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <h1><a href="/">Blog Forum System</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts/">All Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+<article class="post">
+    <header>
+        <h1>Setting Up GitHub Pages Deployment</h1>
+        <time datetime="Mon Nov 10 2025 02:00:00 GMT+0200 (Israel Standard Time)">Mon Nov 10 2025 02:00:00 GMT+0200 (Israel Standard Time)</time>
+        
+        <div class="tags">
+            
+            <span class="tag">github</span>
+            
+            <span class="tag">deployment</span>
+            
+            <span class="tag">tutorial</span>
+            
+        </div>
+        
+    </header>
+    
+    <div class="content">
+        <h1>Setting Up GitHub Pages Deployment</h1>
+<p>This tutorial will guide you through setting up GitHub Pages to host your blog for free. GitHub Pages is an excellent platform for hosting static sites like our Markdown-based blog.</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>A GitHub account</li>
+<li>Git installed on your system</li>
+<li>Your blog files ready to deploy</li>
+</ul>
+<h2>Steps to Deploy</h2>
+<h3>1. Create a GitHub Repository</h3>
+<p>First, create a new repository on GitHub. You can name it anything you like, such as <code>my-blog</code> or <code>blog-forum-system</code>.</p>
+<h3>2. Initialize Git in Your Blog Directory</h3>
+<pre><code class="language-bash">cd /path/to/your/blog-forum-system
+git init
+git add .
+git commit -m &quot;Initial blog setup&quot;
+</code></pre>
+<h3>3. Connect to Your GitHub Repository</h3>
+<pre><code class="language-bash">git remote add origin https://github.com/your-username/your-repository-name.git
+git branch -M main
+git push -u origin main
+</code></pre>
+<h3>4. Configure GitHub Pages</h3>
+<ol>
+<li>Go to your repository on GitHub</li>
+<li>Click on the &quot;Settings&quot; tab</li>
+<li>Scroll down to the &quot;Pages&quot; section</li>
+<li>Under &quot;Source&quot;, select &quot;Deploy from a branch&quot;</li>
+<li>Choose &quot;main&quot; branch and &quot;/ (root)&quot; folder</li>
+<li>Click &quot;Save&quot;</li>
+</ol>
+<h3>5. Wait for Deployment</h3>
+<p>GitHub Pages will take a few minutes to build and deploy your site. Once complete, you'll see a message confirming the deployment with a link to your site.</p>
+<h2>Adding New Posts</h2>
+<p>Adding new posts to your blog is as simple as:</p>
+<ol>
+<li>Create a new Markdown file in the <code>src/posts/</code> directory</li>
+<li>Include the required frontmatter (title, date, tags, layout)</li>
+<li>Commit and push to GitHub</li>
+<li>Run the build process (if needed) or wait for automatic deployment</li>
+</ol>
+<h2>Automatic Builds</h2>
+<p>You can set up GitHub Actions to automatically build your site whenever you push changes to your repository. Create a <code>.github/workflows/deploy.yml</code> file with the build configuration.</p>
+<p>Your blog will be automatically updated with your new posts!</p>
+
+    </div>
+</article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Blog Forum System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
