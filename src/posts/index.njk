@@ -1,22 +1,27 @@
 ---
 layout: base.njk
-title: All Posts
+title: כל הפוסטים
 ---
 
-<h2>All Posts</h2>
+<h2>כל הפוסטים</h2>
 
-<ul class="post-list">
+<div class="posts-container">
 {% for post in collections.posts | reverse %}
-    <li>
-        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <time datetime="{{ post.date }}">{{ post.date }}</time>
-        {% if post.data.tags %}
-        <div class="tags">
-            {% for tag in post.data.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
+    <article class="post-item">
+        <header>
+            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <time datetime="{{ post.date }}">{{ post.date }}</time>
+            {% if post.data.tags %}
+            <div class="tags">
+                {% for tag in post.data.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+        <div class="post-excerpt">
+            <p>{{ post.templateContent | truncate(200) }}...</p>
         </div>
-        {% endif %}
-    </li>
+    </article>
 {% endfor %}
-</ul>
+</div>

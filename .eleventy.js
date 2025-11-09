@@ -11,6 +11,17 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(date, { zone: "utc" }).toFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
   });
 
+  // Truncate filter
+  eleventyConfig.addFilter("truncate", function (str, length) {
+    if (typeof str === "string") {
+      if (str.length <= length) {
+        return str;
+      }
+      return str.substring(0, length) + "...";
+    }
+    return str;
+  });
+
   // Create a collection for posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();

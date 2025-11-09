@@ -1,29 +1,55 @@
 ---
 layout: base.njk
-title: Home
+title: דף הבית
 ---
 
-<h2>Welcome to the Blog Forum System</h2>
-
-<p>This is a Markdown-based blog system that automatically converts your posts to a blog on GitHub Pages.</p>
-
-<h3>Latest Posts</h3>
-<ul class="post-list">
-{% for post in collections.posts | reverse %}
-    {% if loop.index0 < 5 %}
-    <li>
-        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <time datetime="{{ post.date }}">{{ post.date }}</time>
-        {% if post.data.tags %}
-        <div class="tags">
-            {% for tag in post.data.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
+<div class="hero-section">
+    <h2>ברוכים הבאים למערכת הבלוגים המתקדמת שלנו</h2>
+    <p class="hero-subtitle">מערכת בלוגים ופורומים מתקדמת עם עיצוב מודרני, מותאמת לעברית</p>
+    <div class="hero-features">
+        <div class="feature">
+            <h3>מערכת פתוחה</h3>
+            <p>מערכת פתוחה לעריכה עם GitHub CLI</p>
         </div>
-        {% endif %}
-    </li>
-    {% endif %}
-{% endfor %}
-</ul>
+        <div class="feature">
+            <h3>עיצוב מודרני</h3>
+            <p>עיצוב מתקדם עם Hebrew typography</p>
+        </div>
+        <div class="feature">
+            <h3>מעדכן אוטומטית</h3>
+            <p>מעדכן GitHub Pages אוטומטית עם כל עדכון</p>
+        </div>
+    </div>
+</div>
 
-<p><a href="/posts/">View all posts</a></p>
+<div class="latest-posts">
+    <h3>פוסטים אחרונים</h3>
+    <div class="post-grid">
+        {% for post in collections.posts | reverse %}
+            {% if loop.index0 < 6 %}
+            <article class="post-card">
+                <header>
+                    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                    <time datetime="{{ post.date }}">{{ post.date }}</time>
+                    {% if post.data.tags %}
+                    <div class="tags">
+                        {% for tag in post.data.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </header>
+                <div class="post-excerpt">
+                    <p>{{ post.templateContent | truncate(120) }}...</p>
+                </div>
+            </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="call-to-action">
+    <h3>מעוניין להוסיף פוסט?</h3>
+    <p>אפשר להוסיף פוסטים בקלות דרך GitHub CLI</p>
+    <a href="/posts/" class="btn">כל הפוסטים</a>
+</div>
