@@ -1,0 +1,26 @@
+{
+  "name": "blog-forum-system",
+  "version": "1.0.0",
+  "description": "A Markdown-based blog system for GitHub Pages",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "forum",
+    "markdown",
+    "github-pages"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
+  },
+  "type": "commonjs"
+}

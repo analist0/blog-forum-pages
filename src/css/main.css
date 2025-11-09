@@ -1,0 +1,109 @@
+/* Basic styling for the blog forum system */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+}
+
+.post {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.post header h1 {
+    margin-top: 0;
+}
+
+.post time {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.tags {
+    margin: 0.5rem 0;
+}
+
+.tag {
+    background-color: #3498db;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-right: 0.3rem;
+}
+
+.content {
+    margin-top: 1.5rem;
+}
+
+/* Index page specific styles */
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #eee;
+}
+
+.post-list h2 {
+    margin: 0;
+}
+
+.post-list time {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
